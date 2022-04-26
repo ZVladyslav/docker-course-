@@ -15,8 +15,8 @@ const logsPath = path.resolve(__dirname, 'data', 'logs.txt')
 
 app.get('/', async (req, res) => {
   const data = await fs.readFile(logsPath, 'utf-8')
-  const logs = data.split('\r\n').filter(i => !!i)
-  res.render('index', {logs})
+  const logs = data.split('\r\n').filter((i) => !!i)
+  res.render('index', { logs })
 })
 
 app.post('/', async (req, res) => {
